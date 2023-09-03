@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    font-family: Jetbrains Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: Jetbrains Mono,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace !important;
+}
+
+
+
+$dark-color : #060521;
+$light-color: #071230;
+$primary-color: #7D9DDF;
+
+$theme-colors: (
+        "primary": $dark-color,
+        "secondary": $light-color,
+        "danger": #ff4136
+);
+
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+.absolute-text {
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+}
+
+
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 0;
+    line-break: normal;
+    font-weight: bold;
+}
+.spiral{
+    height: calc(100vh - 75px);
+    width: 100%;
+}
+
+#root, body, html{
+    background: $dark-color;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
