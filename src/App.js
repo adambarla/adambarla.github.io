@@ -37,11 +37,12 @@ function Name() {
     )
 }
 
+const n = 110000;
+
 const Spiral = () => {
-    let n = 110000;
     // let t = 1;
     const t = useRef(Math.random() * 2 * Math.PI);
-    const primes = new Map();
+    const primes = useRef(new Map());
     const p5Ref = useRef(null);
 
 
@@ -54,10 +55,10 @@ const Spiral = () => {
 
             // Generate primes
             for (let i = 2; i <= n; i++) {
-                if (!primes.has(i)) {
-                    primes.set(i, true);
+                if (!primes.current.has(i)) {
+                    primes.current.set(i, true);
                     for (let j = i * i; j <= n; j += i) {
-                        primes.set(j, false);
+                        primes.current.set(j, false);
                     }
                 }
             }
@@ -70,8 +71,8 @@ const Spiral = () => {
         p.draw = () => {
             p.background(7, 18, 48, 255);
 
-            for (let prime of primes.keys()) {
-                if (primes.get(prime)) {
+            for (let prime of primes.current.keys()) {
+                if (primes.current.get(prime)) {
                     p.circle((prime * Math.sin(prime * t.current)) / 99 + p5Ref.current.offsetWidth / 2,
                         (prime * Math.cos(prime * t.current)) / 99 + p5Ref.current.offsetHeight / 2,
                         Math.max(2, p5Ref.current.offsetWidth / 500));
@@ -80,7 +81,7 @@ const Spiral = () => {
 
             t.current += 0.0000001 / Math.max(p5Ref.current.offsetWidth, p5Ref.current.offsetHeight) * 1000;
         };
-    }, [n, primes]);
+    }, []);
 
     useEffect(() => {
         if (p5Ref.current === null) return;
@@ -90,7 +91,7 @@ const Spiral = () => {
         return () => {
             mp5.remove();
         }
-    }, [p5Ref.current?.offsetWidth, p5Ref.current?.offsetHeight, sketch, t.current]);
+    }, [p5Ref.current?.offsetWidth, p5Ref.current?.offsetHeight, sketch]);
 
     const [props] = useSpring(
         () => ({
