@@ -15,7 +15,7 @@ function App() {
             </div>
 
             <div style={{height: 80}} className={"d-flex justify-content-center align-items-center gap-2"}>
-                <SocialIcon url={"https://www.linkedin.com/in/adam-barla-1422b9208/"} bgColor={"#0077b5"}/>
+                <SocialIcon url={"https://www.linkedin.com/in/barla"} bgColor={"#0077b5"}/>
                 <SocialIcon url={"https://github.com/barlaada"} bgColor={"#4078c0"}/>
             </div>
             <div className={"d-flex justify-content-center align-items-center"}>
