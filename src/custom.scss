@@ -14,7 +14,7 @@ code {
 $darker-color: #060522;
 $dark-color: #071230;
 $light-color: #26334b;
-$lighter-color: #7D9DDF;
+$lighter-color: #cbdcff;
 
 $theme-colors: (
         "primary": $darker-color,
@@ -28,7 +28,7 @@ $theme-colors: (
 
 .name {
     position: absolute;
-    left: 50%;
+    left: 50% ;
     top: 75%;
     transform: translate(-50%, -50%);
 }
@@ -51,7 +51,7 @@ pre {
 
 .huge-text {
     font-size: min(1vw, 0.5rem);
-    color: lightgoldenrodyellow;
+    color: $lighter-color;
 }
 
 ::-webkit-scrollbar {
@@ -89,6 +89,6 @@ hr {
 }
 
 .gradiant {
-    background: linear-gradient(0deg, $darker-color 0%, $dark-color 100%);
+    background: linear-gradient(0deg, $darker-color 0%, $dark-color 69%);
 }
 
